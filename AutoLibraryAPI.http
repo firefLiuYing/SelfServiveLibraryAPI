@@ -1,6 +1,6 @@
 @AutoLibraryAPI_HostAddress = http://localhost:5082
 
-GET {{AutoLibraryAPI_HostAddress}}/weatherforecast/
+GET {{AutoLibraryAPI_HostAddress}}/autolibrary/
 Accept: application/json
 
 ###
