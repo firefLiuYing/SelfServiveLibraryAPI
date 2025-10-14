@@ -2,6 +2,7 @@ using AutoLibraryAPI.Date;
 using AutoLibraryAPI.Models;
 using AutoLibraryAPI.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1",new OpenApiInfo{Title = "My API" ,Version="v1"});
+});
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddDbContext<DataContext>(opt=>
@@ -20,9 +25,28 @@ builder.Services.AddOpenApi();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// if (app.Environment.IsDevelopment())
 {
+    app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
+    {
+        var endpoints = endpointSources.SelectMany(es => es.Endpoints);
+        return new
+        {
+            TotalEndpoints = endpoints.Count(),
+            Routes = endpoints.Select(e => 
+                new { 
+                    Pattern = (e as RouteEndpoint)?.RoutePattern?.RawText,
+                    Methods = e.Metadata.GetMetadata<HttpMethodMetadata>()?.HttpMethods
+                })
+        };
+    });
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
 app.UseHttpsRedirection();
