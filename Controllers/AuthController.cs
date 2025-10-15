@@ -1,5 +1,6 @@
 ﻿using AutoLibraryAPI.Models;
 using AutoLibraryAPI.Services;
+using AutoLibraryAPI.Util;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutoLibraryAPI.Controllers;
@@ -11,30 +12,30 @@ public class AuthController(IUserService userService) : ControllerBase
     private readonly IUserService _userService = userService;
 
     [HttpPost("login")]
-    public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginRequest loginRequest)
+    public async Task<ActionResult<UserInfo>> Login([FromBody] LoginRequest loginRequest)
     {
-        var result = await _userService.LoginAsync(loginRequest);
-        return Ok(result);
+        var user = await _userService.GetUser(loginRequest);
+        if (user == null) return Unauthorized("用户不存在");
+        if (!PasswordHasher.VerifyPasswordHash(loginRequest.Password, user.PasswordHash, user.PasswordSalt))
+            return Unauthorized("账号或密码错误");
+        if (!user.IsActive) return Unauthorized("账号被封禁中");
+        UserInfo userInfo = new(user);
+        return Ok(userInfo);
     }
 
     [HttpGet("test")]
-    public async Task<ActionResult<LoginResponse>> Test()
+    public async Task<ActionResult<UserInfo>> Test()
     {
-        LoginResponse loginResponse = new LoginResponse
+        var userInfo = new UserInfo()
         {
-            Expiration = DateTime.Now,
-            Token="test",
-            UserInfo = new UserInfo()
-            {
-                Email = "email@email.com",
-                FirstName = "FirstName",
-                LastName = "LastName",
-                Id=1,
-                Role = Role.SuperAdmin,
-                Username = "username",
-                UserType = "AdminUser",
-            }
+            Email = "email@email.com",
+            FirstName = "FirstName",
+            LastName = "LastName",
+            Id = 1,
+            Role = Role.SuperAdmin,
+            Username = "username",
+            UserType = "AdminUser",
         };
-        return Ok(loginResponse);
+        return Ok(userInfo);
     }
 }

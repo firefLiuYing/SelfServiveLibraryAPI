@@ -1,5 +1,13 @@
 ????
+docker ps
 docker stop my-book-app
 docker rm my-book-app
 docker build -t book-api .
 docker run -d -p 8080:8080 --name my-book-app book-api
+docker logs my-book-app --tail 50
+
+# ??????
+dotnet ef migrations add InitialCreate
+
+# ????
+dotnet ef database update

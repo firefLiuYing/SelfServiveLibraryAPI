@@ -15,14 +15,19 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1",new OpenApiInfo{Title = "My API" ,Version="v1"});
 });
+
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddDbContext<DataContext>(opt=>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+    context.Database.Migrate(); // ??????
+}
 
 // Configure the HTTP request pipeline.
 // if (app.Environment.IsDevelopment())

@@ -10,4 +10,17 @@ public class UserInfo
     public Role Role { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
+
+    public UserInfo() { }
+
+    public UserInfo(UserBase user)
+    {
+        Id = user.Id;
+        Username = user.Username;
+        Email = user.Email;
+        UserType = user.UserType;
+        Role = user.Role;
+        FirstName = user.FirstName;
+        LastName = user.LastName;
+    }
 }

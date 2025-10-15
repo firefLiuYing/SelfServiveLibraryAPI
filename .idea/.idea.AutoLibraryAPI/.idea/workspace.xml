@@ -10,22 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d3db24b-eb89-40f4-a296-1f1a4c9f6a39" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/ReadMe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AutoLibraryAPI/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AutoLibraryAPI/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AutoLibraryAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AutoLibraryAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoLibraryAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AutoLibraryAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/UserInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/UserInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/AutoLibraryAPI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/AutoLibraryAPI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReadMe" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IJwtService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IUserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/AutoLibraryAPI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/AutoLibraryAPI.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/AutoLibraryAPI.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/AutoLibraryAPI.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/AutoLibraryAPI.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +141,8 @@
       <workItem from="1760351024676" duration="6535000" />
       <workItem from="1760445823840" duration="234000" />
       <workItem from="1760446665350" duration="1683000" />
-      <workItem from="1760449202413" duration="1134000" />
+      <workItem from="1760449202413" duration="6708000" />
+      <workItem from="1760496820179" duration="2197000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -172,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760448307419</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="舒服了呀&#10;添加接口可视化UI">
+      <option name="closed" value="true" />
+      <created>1760450598566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760450598566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +189,8 @@
     <MESSAGE value="初始化" />
     <MESSAGE value="我觉得可以跑了" />
     <MESSAGE value="这下是真能跑了" />
-    <option name="LAST_COMMIT_MESSAGE" value="这下是真能跑了" />
+    <MESSAGE value="舒服了呀&#10;添加接口可视化UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="舒服了呀&#10;添加接口可视化UI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
